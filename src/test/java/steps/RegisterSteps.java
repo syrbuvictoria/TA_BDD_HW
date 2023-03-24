@@ -52,24 +52,6 @@ public class RegisterSteps {
         System.out.println("User clicked on " + submitButton);
     }
 
-    /*@Then("user successfully submitted the form and a pop-up \"Thanks for submitting the form\" with following data is displayed")
-    public void populatedField(String expectedMessage, DataTable dataTable) {
-        List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
-        for (Map<String, String> row : rows) {
-            for (Map.Entry<String, String> entry : row.entrySet()) {
-                System.out.println(entry.getKey() + " field is populated with valid data: " + entry.getValue());
-            }
-        }*/
-
-        /*// Validate the expected pop-up message
-        String actualMessage = getPopupMessage();
-        Assert.assertEquals(expectedMessage, actualMessage);
-    }*/
-
-    // helper method to simulate getting the pop-up message
-    private String getPopupMessage() {
-        return "Thanks for submitting the form";
-    }
 
     @Then("user successfully submitted the form and a pop-up \"Thanks for submitting the form\" with following data is displayed")
     public void populatedField(DataTable dataTable) {
@@ -81,40 +63,8 @@ public class RegisterSteps {
         }
     }
 
-/*    @Then("user {string} submitted the form and {string} is displayed")
-    public void populatedField(DataTable dataTable) {
-        List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
-        String dataType = "valid"; // change this to "invalid" to test invalid data
-        switch(dataType) {
-            case "successfully":
-                for (Map<String, String> row : rows) {
-                    for (Map.Entry<String, String> entry : row.entrySet()) {
-                        System.out.println(entry.getKey() + " field is populated with valid data: " + entry.getValue());
-                    }
-                }
-                break;
-            case "unsuccessfully":
-                // do nothing for invalid data
-                break;
-            default:
-                System.out.println("Invalid data type.");
-                break;
-        }
-    }*/
-
-/*    @Then("user unsuccessfully submitted the form and {string} is displayed")
-    public void messageIsDisplayed(String elementName, String message) {
-        System.out.println(elementName + " element is located");
-        System.out.println("Message is displayed:\n" + message);
-    }*/
 
     @Then("user unsuccessfully submitted the form and nothing is displayed")
     public void formSubmissionFailed() {
-        // Add code to simulate a failed form submission
-        // and ensure that no message is displayed.
-        // For example, you could throw an exception here
-        // to simulate a failure and verify that no message
-        // is displayed to the user.
-        //throw new RuntimeException("Form submission failed");
     }
 }
