@@ -1,4 +1,4 @@
-package hooks;
+package Hooks;
 
 import org.junit.After;
 import org.junit.Before;
